@@ -3,6 +3,14 @@
 *{
     margin: 0;
     padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+:root{
+    --font-primary:'Yusei Magic', serif;
+    --font-secundary: 'Shadows Into Light', serif;
+    --font-action: serif;
+
 }
 header{
     width: 100%;
@@ -36,7 +44,7 @@ header{
 .banner h1{
     color: #ffffff;
     font-size: 3.5rem;
-    font-family: 'Yusei Magic', serif;
+    font-family: var(--font-primary);
     font-weight: 200;
     text-shadow: .3rem .4rem 2px rgba(0, 0, 0, .4);
     line-height: 3.5rem;
@@ -46,7 +54,7 @@ header{
     
 }
 .banner p{
-    font-family: 'Shadows Into Light', serif;
+    font-family: var(--font-secundary);
     color: #ffffff;
     font-size: 2rem;
     text-shadow: .3rem .4rem 2px rgba(0, 0, 0, .4);
@@ -56,7 +64,7 @@ header{
 
 }
 .banner button{
-    font-family: 'Coda Caption', serif;
+    font-family: var(--font-action);
     color: #000000;
     
     background-color: purple;
@@ -99,4 +107,100 @@ header{
         transform: translateY(0) rotateY(0);
         opacity: 1;
     }
+}
+
+.hamburguer{
+    /*background-color: red;*/
+    width: 2rem;
+    height: 2rem;
+    position: fixed;
+    z-index: 100;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+
+}
+
+.line{
+    width: 100%;
+    background-color: #ffffff;
+    height: .1rem;
+    box-shadow: 0.1rem 0.1rem 1px #000000;
+    transition: transform 1s;
+
+}
+
+
+.sidebar{
+    width: 20rem;
+    height: 100vh;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    right: -20rem;
+    transition: all 1s;
+
+
+
+
+}
+.sidebar.show-menu{
+    right: 0;
+
+}
+
+.menu-item{
+    text-align: center;
+    margin-bottom: .3rem;
+}
+
+.menu-link{
+    font-family: ;
+}
+.menu{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.menu-link{
+    font-family: var(--font-action);
+    font-size: 2rem;
+    color: #555;
+    transition: color 1s;
+}
+.menu-link:hover{
+    color: #5c45cb;
+}
+
+.social-media{
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+}
+
+.social-media i{
+    color: #000000;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.social-media i:hover{
+    background-color: #5c45cb;
+    border-radius: 50%;
+}
+.show-menu .hamburguer{
+    right: 16rem;
+}    
+.show-menu .sidebar{
+right: 0;
 }
